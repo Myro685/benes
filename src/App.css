@@ -1,38 +1,152 @@
 .App {
-  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: #0f0e14;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
+.glow {
+  position: absolute;
+  width: 32rem;
+  height: 32rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.35) 0%, transparent 70%);
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 28rem);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(145deg, #1a1824 0%, #12101a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9b8fd4;
+}
+
+.emoji {
+  font-size: 3rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  margin: 0 0 0.35rem;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #f5f3ff;
+  line-height: 1.25;
+}
+
+.sublabel {
+  margin: 0 0 1.75rem;
+  font-size: 0.95rem;
+  color: rgba(245, 243, 255, 0.55);
+}
+
+.countdown {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-bottom: 2rem;
+}
+
+.time-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 4.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.time-value {
+  font-size: 2.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #e8e4ff;
+  line-height: 1;
+  font-feature-settings: 'tnum';
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.time-unit {
+  margin-top: 0.35rem;
+  font-size: 0.7rem;
+  color: rgba(245, 243, 255, 0.4);
+  text-transform: lowercase;
+}
+
+.separator {
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgba(155, 143, 212, 0.5);
+  padding-bottom: 1.4rem;
+  line-height: 1;
+}
+
+.done-message {
+  margin: 0 0 2rem;
+  font-size: 1.15rem;
+  color: #c4b8ff;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.5rem;
+}
+
+.timeline li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  color: rgba(245, 243, 255, 0.35);
+  transition: background 0.2s, color 0.2s;
+}
+
+.timeline li.active {
+  background: rgba(124, 92, 255, 0.15);
+  color: #f5f3ff;
+}
+
+.timeline-time {
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  min-width: 4.5rem;
+  color: inherit;
+}
+
+.timeline-text {
+  font-size: 0.85rem;
+}
+
+.timeline li.active .timeline-time {
+  color: #b8a8ff;
 }
