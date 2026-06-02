@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const EXAM_START = new Date(2026, 4, 26, 9, 0, 0);
-const RESULTS_AT = new Date(2026, 4, 26, 13, 0, 0);
+const EXAM_START = new Date(2026, 5, 3, 8, 15, 0);
+const RESULTS_AT = new Date(2026, 5, 3, 12, 0, 0);
 
 function getPhase(now) {
   if (now < EXAM_START) return "before";
@@ -31,17 +31,17 @@ function pad(n) {
 const PHASE_CONTENT = {
   before: {
     label: "Do státnic zbývá",
-    sublabel: "26. května 2026 · 9:00",
+    sublabel: "3. června 2026 · 8:15",
     emoji: "📚",
   },
   during: {
     label: "Do výsledků zbývá",
-    sublabel: "26. května 2026 · 13:00",
+    sublabel: "3. června 2026 · 12:00",
     emoji: "⏳",
   },
   after: {
     label: "Výsledky jsou venku!",
-    sublabel: "Držíme palce, Beneši 🎓",
+    sublabel: "Držíme palce, Davide 🎓",
     emoji: "🎉",
   },
 };
@@ -63,7 +63,7 @@ function App() {
     <div className="App">
       <div className="glow" aria-hidden="true" />
       <main className="card">
-        <p className="eyebrow">Státnice Béňa</p>
+        <p className="eyebrow">Státnice Davida</p>
         <span className="emoji" role="img" aria-hidden="true">
           {content.emoji}
         </span>
@@ -103,17 +103,17 @@ function Timeline({ phase }) {
   const steps = [
     {
       id: "before",
-      time: "9:00",
+      time: "8:15",
       text: "Začátek státnic",
       active: phase === "before",
     },
     {
       id: "during",
-      time: "9:00–13:00",
+      time: "8:15–12:00",
       text: "Čekáme na výsledek",
       active: phase === "during",
     },
-    { id: "after", time: "13:00", text: "Výsledky", active: phase === "after" },
+    { id: "after", time: "12:00", text: "Výsledky", active: phase === "after" },
   ];
 
   return (

@@ -3,5 +3,5 @@ import App from './App';
 
 test('renders státnice heading', () => {
   render(<App />);
-  expect(screen.getByText(/Státnice Beneše/i)).toBeInTheDocument();
+  expect(screen.getByText(/Státnice Davida/i)).toBeInTheDocument();
 });
